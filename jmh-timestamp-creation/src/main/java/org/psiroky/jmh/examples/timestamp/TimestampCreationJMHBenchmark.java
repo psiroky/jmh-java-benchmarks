@@ -34,25 +34,21 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
 public class TimestampCreationJMHBenchmark {
 
     @GenerateMicroBenchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public long createTimestampFromCalendarInstance() {
         return Calendar.getInstance().getTime().getTime();
     }
 
     @GenerateMicroBenchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public long createTimestampFromNewDate() {
         return new Date().getTime();
     }
 
     @GenerateMicroBenchmark
-    @BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
     public long createTimestampByCallingCurrentTimeMillis() {
         return System.currentTimeMillis();
     }
