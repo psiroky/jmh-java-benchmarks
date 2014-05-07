@@ -33,6 +33,7 @@
   <modules>
     <module>jmh-timestamp-creation</module>
     <module>jmh-string-concat</module>
+    <module>drools6-helloworld-benchmark</module>
   </modules>
 
   <build>
